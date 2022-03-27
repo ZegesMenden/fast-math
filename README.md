@@ -8,3 +8,4 @@ library with many optimized math functions aimed towards microcontrollers with n
 * tangent
 * distance between two points (latitude and longitude)
 * course between two points (latitude and longitude)
+# !!Warning - this code uses over 8kB of program memory!!
