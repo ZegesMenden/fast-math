@@ -236,7 +236,7 @@ inline double fcos(double n) { return fsin(n + halfPid); }
 
 inline double ftan(double n) { return fsin(n) / fcos(n); }
 
-double DBP(double la1, double lo1, double la2, double lo2)
+inline double DBP(double la1, double lo1, double la2, double lo2)
 {
     double dlat = (la2 - la1);
     double dlon = (lo2 - lo1);
@@ -245,7 +245,7 @@ double DBP(double la1, double lo1, double la2, double lo2)
     return EARTH_RADIUS * c;
 }
 
-double fDBP(double la1, double lo1, double la2, double lo2)
+inline double fDBP(double la1, double lo1, double la2, double lo2)
 {
     double dlat = (la2 - la1);
     double dlon = (lo2 - lo1);
@@ -254,7 +254,7 @@ double fDBP(double la1, double lo1, double la2, double lo2)
     return EARTH_RADIUS * c;
 }
 
-float fDBPf(float la1, float lo1, float la2, float lo2)
+inline float fDBPf(float la1, float lo1, float la2, float lo2)
 {
     float dlat = (la2 - la1);
     float dlon = (lo2 - lo1);
@@ -263,7 +263,7 @@ float fDBPf(float la1, float lo1, float la2, float lo2)
     return EARTH_RADIUS * c;
 }
 
-double CBP(double la1, double lo1, double la2, double lo2)
+inline double CBP(double la1, double lo1, double la2, double lo2)
 {
     double d_lo = (lo2-lo1);
     double y = sin(d_lo) * cos(la1);
@@ -272,20 +272,20 @@ double CBP(double la1, double lo1, double la2, double lo2)
     return atan2(y,x);
 }
 
-double fCBP(double la1, double lo1, double la2, double lo2)
+inline double fCBP(double la1, double lo1, double la2, double lo2)
 {
     double d_lo = (lo2-lo1);
-    double y = GPSSin(d_lo) * GPSCos(la1);
-    double x = GPSCos(la1) * GPSSin(la2) - GPSSin(la1) * GPSCos(la2) * GPSCos(d_lo);
+    double y = fsin(d_lo) * fcos(la1);
+    double x = fcos(la1) * fsin(la2) - fsin(la1) * fcos(la2) * fcos(d_lo);
 
     return atan2(y,x);
 }
 
-float fCBPf(float la1, float lo1, float la2, float lo2)
+inline float fCBPf(float la1, float lo1, float la2, float lo2)
 {
     float d_lo = (lo2-lo1);
-    float y = GPSSinf(d_lo) * GPSCosf(la1);
-    float x = GPSCosf(la1) * GPSSinf(la2) - GPSSinf(la1) * GPSCosf(la2) * GPSCosf(d_lo);
+    float y = fsinf(d_lo) * fcosf(la1);
+    float x = fcosf(la1) * fsinf(la2) - fsinf(la1) * fcosf(la2) * fcosf(d_lo);
 
     return atan2f(y,x);
 }
