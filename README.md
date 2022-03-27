@@ -9,4 +9,4 @@ library with many optimized math functions aimed towards microcontrollers with n
 * distance between two points (latitude and longitude)
 * course between two points (latitude and longitude)
 # !!Warning - this code uses over 8kB of program memory!!
-## Small storage microcontrollers (328p) beware!!
+## Low storage microcontrollers (328p) beware!!
